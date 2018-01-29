@@ -14,8 +14,25 @@ $(() => {
 // require('./example')
 
 $(() => {
+  // hide the list of games from the start noly show on login signInSuccess
+  $('#gamesDisplay').hide()
+  // hide the sign up form until selected
+  $('#signUpForm').hide()
   // connect the sign up btn to the sign function
-  $('#sign-up').on('submit', event.onSignUp)
-  //connenct the sign in btn to the sign in function
-  $('#sign-in').on('submit', event.onSignIn)
+  $('#signUpForm').on('submit', event.onSignUpRequest)
+  // connect the sign in btn to the sign in function
+  $('#signInForm').on('submit', event.onSignInRequest)
+  // connect sign out form to sign out function
+  $('#signOutForm').on('submit', event.onSignOutRequest)
+  // hide sign out option until log in
+  $('#signOutForm').hide()
+  // if the signup link is pressed the form is displayed
+  $('#signUpToggleBtn').on('click', () => {
+    $('#signUpForm').show()
+    $('#signUpToggleBtn').hide()
+  })
+  // hide creeate games form
+  $('#gameCreateForm').hide()
+  // hide update games form
+  $('#gameUpdateForm').hide()
 })
