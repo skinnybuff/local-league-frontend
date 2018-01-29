@@ -13,45 +13,70 @@
     </head>
     <body>
       <main>
-        <ul>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
-          <li>The quick brown fox jumps ove the lazy dog</li>
+        <ul id="gamesDisplay">
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
+          <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li>
         </ul>
       </main>
       <aside id="adminPanel">
         <div class="wrapper">
           <h1>Local League</h1>
 
-          <form id="sign-in">
+          <form id="signInForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
             <input type="password" name="credentials[password]" placeholder="password"/>
-            <br>
             <button type="submit">Sign In</button>
           </form>
-          <form id="sign-up">
+          <!-- this link is to allow the user to sign up if they havenet used the app before -->
+          <a id="signUpToggleBtn"> Sign Up</a>
 
+          <form id="signUpForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
             <input type="password" name="credentials[password]" placeholder="password"/>
             <br>
             <input type="password" name="credentials[password_confirmation]" placeholder="retype password"/>
-            <br>
             <button type="submit">Sign Up</button>
+          </form>
+
+          <form id="signOutForm">
+            <input></input>
+            <button>Sign Out</button>
+          </form>
+          <!-- through this form a user create games -->
+          <form id="gameCreateForm">
+            <br>
+            <hr/>
+            <input type="date" />
+            <input type="text" placeholder="location"/>
+            <input type="text" placeholder="home team"/>
+            <input type="number" placeholder="home team score"/>
+            <input type="text" placeholder="away team"/>
+            <input type="number" placeholder="away team score"/>
+            <button type="submit">Create</button>
+            <hr/>
+          </form>
+
+          <form id="gameUpdateForm">
+            <br>
+            <hr/>
+            <p id="gameIDDisaply"> <p>
+            <input type="date"/>
+            <input type="text" placeholder="location"/>
+            <input type="text" placeholder="home team"/>
+            <input type="number" placeholder="home team score"/>
+            <input type="text" placeholder="away team"/>
+            <input type="number" placeholder="away team score"/>
+            <button type="submit">Update</button>
+            <hr/>
           </form>
         </div>
       </aside>
