@@ -35,4 +35,5 @@ $(() => {
   $('#gameCreateForm').hide()
   // hide update games form
   $('#gameUpdateForm').hide()
+  $('#getGames').on('click', event.getAllUserGames)
 })

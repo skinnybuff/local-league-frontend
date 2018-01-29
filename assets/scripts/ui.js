@@ -1,5 +1,6 @@
 'use strict'
 const store = require('./store')
+const event = require('./events')
 
 const apiFailure = function (error) {
   console.log(error)
@@ -25,7 +26,15 @@ const signOutSuccess = function (data) {
   $('#gamesDisplay').show()
   $('#signOutBtn').show()
 }
+
+const getAllGamesSuccess = function (data) {
+  // store.games = data.games
+  console.log(data)
+}
+
 module.exports = {
   apiFailure,
-  signInSuccess
+  signInSuccess,
+  signOutSuccess,
+  getAllGamesSuccess
 }
