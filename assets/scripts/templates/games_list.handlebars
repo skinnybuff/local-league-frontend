@@ -1,8 +1,27 @@
 {{#each games as |game|}}
 
-  <li>{{game.date}} <button> edit </button> <button> trash </button></li>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h1 class="card-title">{{game.home_team}}  - {{game.home_score}}</h1>
+        <h3 class="card-subtitle mb-2 text-muted">vs</h3>
+        <h2 class="card-title"> {{game.away_team}} - {{game.away_score}}</h2>
+        <h4>
+          <a href="#" class="card-link">edit</a>
+          <a href="#" class="card-link">delete</a>
+        </h4>
+      </div>
+
+    </div>
 
 {{/each}}
 
 
 <!-- <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li> -->
+
+
+<!-- <th>Date</th>
+<th>Location</th>
+<th>Home Team</th>
+<th>Home Score</th>
+<th>Away Team</th>
+<th>Away Score</th> -->

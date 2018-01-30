@@ -1,7 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import url('https://fonts.googleapis.com/css?family=Teko|Open+Sans');
+@import url('http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css');
 
+
+// app colors declared as varaibles
 $tundora: #444;
 $meteorite: #3E2685;
 $dovegray: #656565;
@@ -9,6 +12,8 @@ $tuliptree: #F2AB3A;
 $treepoppy: #f7971e;
 $hilight: #ffd200;
 // rgba(101,101,101,.5)
+
+// font  pairings
 // font-family: 'Teko', sans-serif;
 // font-family: 'Open Sans', sans-serif;
 
@@ -49,6 +54,17 @@ $hilight: #ffd200;
       background: $tuliptree;
       border: 1px solid $treepoppy;
     }
+  }
+
+  .card {
+    background: rgba(255, 255, 255, .7);
+    border-radius: 6px;
+    box-shadow: 2px 2px 6px 0px rgba(101,101,101,.5);
+    color: $meteorite;
+    font-size: 28px;
+    margin: 20px;
+    padding: 12px 60px;
+    width: 120px;
   }
 
   form {
@@ -122,24 +138,12 @@ main {
     }
   }
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
-    justify-content: space-around;
-    text-align: center;
-  }
+}
 
-  li {
-    background: rgba(255, 255, 255, .7);
-    border-radius: 6px;
-    box-shadow: 2px 2px 6px 0px rgba(101,101,101,.5);
-    color: $meteorite;
-    font-size: 28px;
-    list-style: none;
-    margin: 10px auto;
-    padding: 12px 60px;
-  }
+#gamesDisplay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
 
 .wrapper {

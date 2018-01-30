@@ -35,5 +35,6 @@ $(() => {
   $('#gameCreateForm').hide()
   // hide update games form
   $('#gameUpdateForm').hide()
-  $('#getGames').on('click', event.getAllUserGames)
+  // create game btn connects to api function
+  $('#gameCreateForm').on(submit, event.onCreateGame)
 })
