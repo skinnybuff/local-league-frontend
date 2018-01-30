@@ -18,7 +18,7 @@ const signIn = (data) => {
   })
 }
 
-const signOut = (data) => {
+const signOut = () => {
   return $.ajax({
     url: config.apiOrigin + '/sign-out/' + store.user.id,
     method: 'DELETE',
@@ -39,13 +39,14 @@ const changePassword = (data) => {
   })
 }
 
-const createGame = () => {
+const createGame = (data) => {
   return $.ajax({
     url: config.apiOrigin + '/games',
     method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
-    }
+    },
+    data
   })
 }
 

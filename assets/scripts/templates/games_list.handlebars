@@ -1,13 +1,13 @@
 {{#each games as |game|}}
-
-    <div class="card" style="width: 18rem;">
+      <!-- style="width: 18rem;" -->
+    <div class="card" data-game-id="{{game.id}}">
       <div class="card-body">
-        <h1 class="card-title">{{game.home_team}}  - {{game.home_score}}</h1>
-        <h3 class="card-subtitle mb-2 text-muted">vs</h3>
-        <h2 class="card-title"> {{game.away_team}} - {{game.away_score}}</h2>
-        <h4>
+        <h4 class="card-subtitle mb-2 text-center text-muted">{{game.date}}</h4>
+        <h1 class="card-title">{{game.home_team}} vs {{game.away_team}} &nbsp;&nbsp; {{game.home_score}} to {{game.away_score}}</h1>
+        <h3 class="card-subtitle mb-2 text-muted">{{game.location}}</h3>
+        <h4 class="text-right">
           <a href="#" class="card-link">edit</a>
-          <a href="#" class="card-link">delete</a>
+          <a href="#" class="card-link gameDeleteBtn">delete</a>
         </h4>
       </div>
 

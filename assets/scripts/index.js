@@ -36,5 +36,7 @@ $(() => {
   // hide update games form
   $('#gameUpdateForm').hide()
   // create game btn connects to api function
-  $('#gameCreateForm').on(submit, event.onCreateGame)
+  $('#gameCreateForm').on('submit', event.onCreateGame)
+  // click event to change user password
+  $('#changePassword').on('submit', event.onChangePass)
 })

@@ -13,7 +13,7 @@
     </head>
     <body>
       <main id="gamesDisplay">
-      
+
       </main>
       <aside id="adminPanel">
         <div class="wrapper">
@@ -41,16 +41,22 @@
             <input readonly="true"></input>
             <button>Sign Out</button>
           </form>
+
+          <form id="changePassword">
+            <input type="password" name="passwords[old]" placeholder="old password"/>
+            <input type="password" name="passwords[new]" placeholder="new password"/>
+            <button> Change Password</button>
+          </form>
           <!-- through this form a user create games -->
           <form id="gameCreateForm">
             <br>
             <hr/>
-            <input type="date" />
-            <input type="text" placeholder="location"/>
-            <input type="text" placeholder="home team"/>
-            <input type="number" placeholder="home team score"/>
-            <input type="text" placeholder="away team"/>
-            <input type="number" placeholder="away team score"/>
+            <input type="date" name="game[date]" />
+            <input type="text" name="game[location]" placeholder="location"/>
+            <input type="text" name="game[home_team]" placeholder="home team"/>
+            <input type="number" name="game[home_score]" placeholder="home team score"/>
+            <input type="text" name="game[away_team]" placeholder="away team"/>
+            <input type="number" name="game[away_score]" placeholder="away team score"/>
             <button type="submit">Create</button>
             <hr/>
           </form>

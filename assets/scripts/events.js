@@ -19,11 +19,18 @@ const onSignInRequest = function (event) {
    .catch(ui.apiFailure)
 }
 
-const onSignOutRequest = function () {
+const onSignOutRequest = function (event) {
   event.preventDefault()
   api.signOut()
    .then(ui.signOutSuccess)
    .catch(ui.apiFailure)
+}
+
+const onChangePass = function (event) {
+  event.preventDefault()
+  api.changePass()
+  .then()
+  .catch(ui.apiFailure)
 }
 
 const getAllUserGames = function () {
@@ -32,9 +39,20 @@ const getAllUserGames = function () {
     .catch(ui.apiFailure)
 }
 
+const onCreateGame = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  // debugger
+  api.createGame(data)
+    .then(ui.createGameSuccess)
+    .then(getAllUserGames)
+    .catch(ui.apiFailure)
+}
+
 module.exports = {
   onSignUpRequest,
   onSignInRequest,
   onSignOutRequest,
-  getAllUserGames
+  getAllUserGames,
+  onCreateGame
 }
