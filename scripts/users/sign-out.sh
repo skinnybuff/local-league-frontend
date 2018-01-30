@@ -2,7 +2,7 @@
 
 # sh shell/sign-out.sh
 
-curl "http://tic-tac-toe.wdibos.com/sign-out/${ID}" \
+curl "http://localhost:4741/sign-out/${ID}" \
   --include \
   --request DELETE\
   --header "Content-Type: application/json" \

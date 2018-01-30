@@ -7,7 +7,9 @@ const event = require('./events')
 const onSignUpRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log("sign up click")
+  api.signUp(data)
+  .then()
+  .catch(ui.apiFailure)
 }
 
 const onSignInRequest = function (event) {
@@ -29,7 +31,7 @@ const onSignOutRequest = function (event) {
 const onChangePass = function (event) {
   event.preventDefault()
   api.changePass()
-  .then()
+  .then(ui.changePassSuccess)
   .catch(ui.apiFailure)
 }
 
@@ -54,5 +56,6 @@ module.exports = {
   onSignInRequest,
   onSignOutRequest,
   getAllUserGames,
-  onCreateGame
+  onCreateGame,
+  onChangePass
 }

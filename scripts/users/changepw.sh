@@ -2,7 +2,7 @@
 
 # sh shell/sign-out.sh
 
-curl "http://tic-tac-toe.wdibos.com/change-password/${ID}" \
+curl "http://localhost:4741/" \
   --include \
   --request PATCH \
   --header "Content-Type: application/json" \
