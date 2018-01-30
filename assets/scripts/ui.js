@@ -1,6 +1,7 @@
 'use strict'
 const store = require('./store')
 const event = require('./events')
+const gameListTemplate = require('./templates/games_list.handlebars')
 
 const apiFailure = function (error) {
   console.log(error)
@@ -28,8 +29,10 @@ const signOutSuccess = function (data) {
 }
 
 const getAllGamesSuccess = function (data) {
-  // store.games = data.games
-  console.log(data)
+  store.games = data.games
+  console.log(store)
+  const gamesListHtml = gameListTemplate({ games: store.games })
+  $('#gamesDisplay').append(gamesListHtml)
 }
 
 module.exports = {
