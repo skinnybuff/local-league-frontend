@@ -41,4 +41,9 @@ $(() => {
   $('#changePassword').hide()
   // click event to change user password
   $('#changePassword').on('submit', event.onChangePass)
+  // click event to delete a game
+  $('main').on('click', '.gameDeleteBtn', event.onGameDelete)
+  // click event to change a game
+  $('main').on('click', '.gameEditBtn', event.onGameChange)
+  // $('.gameEditBtn').modal('toggle')
 })

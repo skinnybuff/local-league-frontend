@@ -13,8 +13,36 @@
     </head>
     <body>
       <main id="gamesDisplay">
+        <!-- update /patch a game modal -->
+        <div class="modal fade" id="updateGameModal">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title text-center">Update your game</h2>
+                  <!-- <span aria-hidden="true">&times;</span> -->
+                </button>
+              </div>
+              <div class="modal-body">
+                <form id="updateGameForm">
+                  <input type="number" name="game[id]" readonly="true" class="no-select"/>
+                  <input type="date" name="game[date]" />
+                  <input type="text" name="game[location]" placeholder="location"/>
+                  <input type="text" name="game[home_team]" placeholder="home team"/>
+                  <input type="number" name="game[home_score]" placeholder="home team score"/>
+                  <input type="text" name="game[away_team]" placeholder="away team"/>
+                  <input type="number" name="game[away_score]" placeholder="away team score"/>
+                  <button type="sumbit">Save Changes</button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
 
       </main>
+
       <aside id="adminPanel">
         <div class="wrapper">
           <h1>Local League</h1>
@@ -38,7 +66,7 @@
           </form>
 
           <form id="signOutForm">
-            <input readonly="true"></input>
+            <input readonly="true" class="no-select"></input>
             <button>Sign Out</button>
           </form>
 
@@ -49,8 +77,9 @@
           </form>
           <!-- through this form a user create games -->
           <form id="gameCreateForm">
-            <br>
             <hr/>
+            <label> <h4>Add a new game<h4> </label>
+            <br>
             <input type="date" name="game[date]" />
             <input type="text" name="game[location]" placeholder="location"/>
             <input type="text" name="game[home_team]" placeholder="home team"/>

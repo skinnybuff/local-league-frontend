@@ -1,20 +1,16 @@
 {{#each games as |game|}}
-      <!-- style="width: 18rem;" -->
     <div class="card" data-game-id="{{game.id}}">
       <div class="card-body">
         <h4 class="card-subtitle mb-2 text-center text-muted">{{game.date}}</h4>
         <h1 class="card-title">{{game.home_team}} vs {{game.away_team}} &nbsp;&nbsp; {{game.home_score}} to {{game.away_score}}</h1>
         <h3 class="card-subtitle mb-2 text-muted">{{game.location}}</h3>
         <h4 class="text-right">
-          <a href="#" class="card-link">edit</a>
-          <a href="#" class="card-link gameDeleteBtn">delete</a>
+          <button class="card-link gameEditBtn" data-toggle="modal" data-target="#updateGameModal">edit</button>
+          <button class="card-link gameDeleteBtn">delete</button>
         </h4>
       </div>
-
     </div>
-
 {{/each}}
-
 
 <!-- <li>The quick brown fox jumps over the lazy dog <button> edit </button> <button> trash </button></li> -->
 

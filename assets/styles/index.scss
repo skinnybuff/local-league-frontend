@@ -149,9 +149,19 @@ main {
   }
 }
 
-
+.no-select {
+    user-select: none;
+}
 
 .wrapper {
   margin: 0 auto;
   width: 50%;
+}
+
+.updateGameModal button {
+  background: $meteorite;
+
+  &:hover {
+    color: #fff;
+  }
 }

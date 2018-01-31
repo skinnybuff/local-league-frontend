@@ -50,9 +50,9 @@ const createGame = (data) => {
   })
 }
 
-const destroyGame = () => {
+const destroyGame = (data) => {
   return $.ajax({
-    url: config.apiOrigin + '/game',
+    url: config.apiOrigin + '/games/'+data,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token

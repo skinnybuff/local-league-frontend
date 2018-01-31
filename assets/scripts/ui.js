@@ -12,15 +12,16 @@ const signInSuccess = function (data) {
   // the sign in return data is saved in the app store
   store.user = data.user
   // show the list of  games display on sign in
-  $('#gamesDisplay').show()
+  $('#gamesDisplay').fadeIn('slow')
   $('#signOutForm').show()
-  $('#signUpForm').hide()
+  $('#signUpForm').fadeOut('fast')
   $('#signInForm').hide()
   $('#signUpToggleBtn').hide()
   $('#gameCreateForm').show()
   $('#signOutForm input').val(data.user.email)
   $('#changePassword').show()
-  console.log(store)
+  // console.log(store)
+  // ('#signUpForm').children('input').val('')
 }
 
 const signOutSuccess = function (data) {
@@ -45,10 +46,14 @@ const getAllGamesSuccess = function (data) {
   $('#gamesDisplay').append(gamesListHtml)
 }
 
-const createGameSuccess = function () {
-  // console.log("new game")
-  $('#gamesDisplay').empty()
-  $('#gamesDisplay').remove()
+const createGameSuccess = function (data) {
+  // console.log(" new game data: " + data)
+
+  $('#gameCreateForm').children('input').val('')
+}
+
+const deleteGameSuccess = function () {
+  $('#gamesDisplay').fadeOut(800)
 }
 
 module.exports = {
