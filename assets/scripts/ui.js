@@ -33,6 +33,7 @@ const signOutSuccess = function (data) {
 }
 
 const changePassSuccess = function () {
+  console.log("password changed")
   // TODO: gice modal feed back
 
 }
