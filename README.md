@@ -1,1 +1,1 @@
-MORE info to come
+the client API repo is here https://git.heroku.com/local-league.git
