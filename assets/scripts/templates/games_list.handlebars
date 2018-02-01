@@ -1,9 +1,12 @@
 {{#each games as |game|}}
     <div class="card" data-game-id="{{game.id}}">
       <div class="card-body">
+        <h4 class="card-subtitle mb-2 text-left text-muted">Game Id: {{game.id}}</h4>
         <h4 class="card-subtitle mb-2 text-center text-muted">{{game.date}}</h4>
-        <h1 class="card-title">{{game.home_team}} vs {{game.away_team}} &nbsp;&nbsp; {{game.home_score}} to {{game.away_score}}</h1>
-        <h3 class="card-subtitle mb-2 text-muted">{{game.location}}</h3>
+        <h1 class="card-title">{{game.home_team}}&nbsp;&nbsp;scored: {{game.home_score}}</h1>
+        <h4 class="card-subtitle mb-2 text-center text-muted">versus</h4>
+        <h1 class="card-title">{{game.away_team}}&nbsp;&nbsp;scored: {{game.away_score}}</h1>
+        <h3 class="card-subtitle mb-2">Location: &nbsp;{{game.location}}</h3>
         <h4 class="text-right">
           <button class="card-link gameEditBtn" data-toggle="modal" data-target="#updateGameModal">edit</button>
           <button class="card-link gameDeleteBtn">delete</button>

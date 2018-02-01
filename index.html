@@ -13,40 +13,16 @@
     </head>
     <body>
       <main id="gamesDisplay">
-        <!-- update /patch a game modal -->
-        <div class="modal fade" id="updateGameModal">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h2 class="modal-title text-center">Update your game</h2>
-                  <!-- <span aria-hidden="true">&times;</span> -->
-                </button>
-              </div>
-              <div class="modal-body">
-                <form id="updateGameForm">
-                  <input type="number" name="game[id]" readonly="true" class="no-select"/>
-                  <input type="date" name="game[date]" />
-                  <input type="text" name="game[location]" placeholder="location"/>
-                  <input type="text" name="game[home_team]" placeholder="home team"/>
-                  <input type="number" name="game[home_score]" placeholder="home team score"/>
-                  <input type="text" name="game[away_team]" placeholder="away team"/>
-                  <input type="number" name="game[away_score]" placeholder="away team score"/>
-                  <button type="sumbit">Save Changes</button>
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
+
 
       </main>
 
       <aside id="adminPanel">
         <div class="wrapper">
-          <h1>Local League</h1>
-
+          <header>
+            <h1>Local League</h1>
+            <p id="headsUp"> </p>
+          </header>
           <form id="signInForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
@@ -87,12 +63,13 @@
             <input type="text" name="game[away_team]" placeholder="away team"/>
             <input type="number" name="game[away_score]" placeholder="away team score"/>
             <button type="submit">Create</button>
-            <hr/>
           </form>
+          <!-- through this form a user updates a game -->
           <form id="gameUpdateForm">
-            <br>
             <hr/>
-            <p id="gameIDDisaply"> <p>
+            <h4>Change a game game</h4>
+            <br>
+            <input type="number" placeholder="game id"/>
             <input type="date"/>
             <input type="text" placeholder="location"/>
             <input type="text" placeholder="home team"/>
@@ -100,10 +77,35 @@
             <input type="text" placeholder="away team"/>
             <input type="number" placeholder="away team score"/>
             <button type="submit">Update</button>
-            <hr/>
           </form>
         </div>
       </aside>
 
     </body>
 </html>
+
+<!--
+<div class="modal fade" id="updateGameModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title text-center">Update your game</h2>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="THIS_ID_IS_NOT_USED">
+          <input type="date" name="game[date]" />
+          <input type="text" name="game[location]" placeholder="location"/>
+          <input type="text" name="game[home_team]" placeholder="home team"/>
+          <input type="number" name="game[home_score]" placeholder="home team score"/>
+          <input type="text" name="game[away_team]" placeholder="away team"/>
+          <input type="number" name="game[away_score]" placeholder="away team score"/>
+          <button type="sumbit">Save Changes</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div> -->

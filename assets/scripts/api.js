@@ -60,6 +60,17 @@ const destroyGame = (data) => {
   })
 }
 
+const getOneGame = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/'+data,
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+
 const getGames = () => {
   return $.ajax({
     url: config.apiOrigin + '/games',
@@ -70,6 +81,17 @@ const getGames = () => {
   })
 }
 
+const updateGame = (data) => {
+  return $.ajax({
+    url: config.apiOrigin + '/games/'+data,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
@@ -77,5 +99,7 @@ module.exports = {
   changePassword,
   getGames,
   createGame,
-  destroyGame
+  destroyGame,
+  updateGame,
+  getOneGame
 }

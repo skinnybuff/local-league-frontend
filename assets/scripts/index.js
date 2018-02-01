@@ -43,7 +43,11 @@ $(() => {
   $('#changePassword').on('submit', event.onChangePass)
   // click event to delete a game
   $('main').on('click', '.gameDeleteBtn', event.onGameDelete)
-  // click event to change a game
-  $('main').on('click', '.gameEditBtn', event.onGameChange)
-  // $('.gameEditBtn').modal('toggle')
+  // click event to launch game patch modal
+  $('main').on('click', '.gameEditBtn', function () {
+    $('#gameUpdateForm').show()
+  })
+  $('gameUpdateForm').on('sumbit', event.onGameChange)
+  // event for sumbit inside of the patch modal
+  // $('main').on('submit', '#updateGameForm', event.onGameChange)
 })

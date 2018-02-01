@@ -11,7 +11,7 @@ const apiFailure = function (error) {
 const signInSuccess = function (data) {
   // the sign in return data is saved in the app store
   store.user = data.user
-  // show the list of  games display on sign in
+  // show the list of  games displayed on sign in
   $('#gamesDisplay').fadeIn('slow')
   $('#signOutForm').show()
   $('#signUpForm').fadeOut('fast')
@@ -25,12 +25,16 @@ const signInSuccess = function (data) {
 }
 
 const signOutSuccess = function (data) {
-  // show the list of  games display on sign in
+  // hide the list of  games displayed on sign in
   $('#gamesDisplay').hide()
   $('#signOutForm').hide()
   $('#signInForm').show()
   $('#gameCreateForm').hide()
   $('#changePassword').hide()
+}
+
+const signUpSuccess = function () {
+  $('#signUpForm').hide()
 }
 
 const changePassSuccess = function () {
@@ -41,9 +45,10 @@ const changePassSuccess = function () {
 
 const getAllGamesSuccess = function (data) {
   store.games = data.games
-  // console.log(store)
   const gamesListHtml = gameListTemplate({ games: store.games })
   $('#gamesDisplay').append(gamesListHtml)
+  console.log(store.games)
+
 }
 
 const createGameSuccess = function (data) {
@@ -53,6 +58,10 @@ const createGameSuccess = function (data) {
 }
 
 const deleteGameSuccess = function () {
+  $('#gamesDisplay').fadeOut(800)
+}
+
+const gamePatchSuccess = function () {
   $('#gamesDisplay').fadeOut(800)
 }
 

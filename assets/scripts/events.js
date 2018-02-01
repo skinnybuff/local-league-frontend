@@ -5,12 +5,13 @@ const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
 const event = require('./events')
+const store = require('./store')
 
 const onSignUpRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
-  .then()
+  .then(ui.signUpSuccess)
   .catch(ui.apiFailure)
 }
 
@@ -39,6 +40,7 @@ const onChangePass = function (event) {
   .catch(ui.apiFailure)
 }
 
+
 const getAllUserGames = function () {
   api.getGames()
     .then(ui.getAllGamesSuccess)
@@ -56,9 +58,23 @@ const onCreateGame = function (event) {
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }
+// pre fill the game patch function with the selcted games data
+const stagingGameChange = function () {
+  const clickedGameId = $(this).parents('.card').attr('data-game-id')
+
+  api.getOneGame(clickedGameId)
+  .then(console.log(Response))
+  .catch(ui.apiFailure)
+}
+
 const onGameChange = function () {
-  const gameId = $(this).parents('.card').attr('data-game-id')
-  console.log(store.games)
+  event.preventDefault()
+  const data = getFormFields(this)
+  console.log('gameId: ' +gameId)
+  console.log('data: ' +data)
+  api.updateGame(data)
+  .then(ui.gamePatchSuccess)
+  .catch(ui.apiFailure)
 }
 
 const onGameDelete = function (event) {
@@ -80,5 +96,6 @@ module.exports = {
   onCreateGame,
   onChangePass,
   onGameChange,
-  onGameDelete
+  onGameDelete,
+  stagingGameChange
 }
