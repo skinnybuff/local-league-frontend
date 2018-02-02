@@ -70,10 +70,11 @@ const stagingGameChange = function () {
 const onGameChange = function () {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('gameId: ' +gameId)
-  console.log('data: ' +data)
+  // console.log('gameId: ' +gameId)
+  // console.log('data: ' +data)
   api.updateGame(data)
   .then(ui.gamePatchSuccess)
+  .then(getAllUserGames)
   .catch(ui.apiFailure)
 }
 

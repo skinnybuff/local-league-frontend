@@ -62,7 +62,7 @@ const deleteGameSuccess = function () {
 }
 
 const gamePatchSuccess = function () {
-  $('#gamesDisplay').fadeOut(800)
+  $('#gamesDisplay').fadeOut()
 }
 
 module.exports = {
