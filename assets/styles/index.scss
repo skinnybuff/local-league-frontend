@@ -9,6 +9,7 @@ $dovegray: #656565;
 $tuliptree: #F2AB3A;
 $treepoppy: #f7971e;
 $hilight: #ffd200;
+$fuchsia: #FF087F;
 // rgba(101,101,101,.5)
 
 // font  pairings
@@ -155,6 +156,13 @@ main {
 .wrapper {
   margin: 0 auto;
   width: 50%;
+}
+
+#uiFeedbackDisplay {
+    color: $fuchsia;
+    font-family: 'Teko', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
 }
 
 .updateGameModal button {
