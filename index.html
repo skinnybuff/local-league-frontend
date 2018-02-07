@@ -29,6 +29,7 @@
             <input type="password" name="credentials[password]" placeholder="password"/>
             <button type="submit">Sign In</button>
           </form>
+          <div id="uiFeedbackDisplay">test copy </div>
           <!-- this link is to allow the user to sign up if they havenet used the app before -->
           <a id="signUpToggleBtn"> Sign Up</a>
 
@@ -51,6 +52,20 @@
             <input type="password" name="passwords[new]" placeholder="new password"/>
             <button> Change Password</button>
           </form>
+          <!-- through this form a user updates a game -->
+          <form id="gameUpdateForm">
+            <hr/>
+            <h4>Change a game game</h4>
+            <br>
+            <input type="number"  name="game[id]" placeholder="game id"/>
+            <input type="date"  name="game[date]">
+            <input type="text" name="game[location]" placeholder="location"/>
+            <input type="text" name="game[home_team]" placeholder="home team"/>
+            <input type="number" name="game[home_score]" placeholder="home team score"/>
+            <input type="text" name="game[away_team]" placeholder="away team"/>
+            <input type="number" name="game[away_score]" placeholder="away team score"/>
+            <button type="submit">Update</button>
+          </form>
           <!-- through this form a user create games -->
           <form id="gameCreateForm">
             <hr/>
@@ -64,20 +79,7 @@
             <input type="number" name="game[away_score]" placeholder="away team score"/>
             <button type="submit">Create</button>
           </form>
-          <!-- through this form a user updates a game -->
-          <form id="gameUpdateForm">
-            <hr/>
-            <h4>Change a game game</h4>
-            <br>
-            <input type="number" placeholder="game id"/>
-            <input type="date"/>
-            <input type="text" placeholder="location"/>
-            <input type="text" placeholder="home team"/>
-            <input type="number" placeholder="home team score"/>
-            <input type="text" placeholder="away team"/>
-            <input type="number" placeholder="away team score"/>
-            <button type="submit">Update</button>
-          </form>
+
         </div>
       </aside>
 

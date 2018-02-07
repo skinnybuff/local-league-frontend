@@ -12,7 +12,7 @@ const onSignUpRequest = function (event) {
   const data = getFormFields(this)
   api.signUp(data)
   .then(ui.signUpSuccess)
-  .catch(ui.apiFailure)
+  .catch(ui.signUpFailure)
 }
 
 // after signin siccess all games are retrieved
@@ -22,7 +22,7 @@ const onSignInRequest = function (event) {
   api.signIn(data)
    .then(ui.signInSuccess)
    .then(getAllUserGames)
-   .catch(ui.apiFailure)
+   .catch(ui.signInFailure)
 }
 
 const onSignOutRequest = function (event) {
@@ -67,12 +67,14 @@ const stagingGameChange = function () {
   .catch(ui.apiFailure)
 }
 
-const onGameChange = function () {
+const onGameChange = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  console.log('gameId: ' +gameId)
-  console.log('data: ' +data)
+  // console.log('gameId: ' +gameId)
+  // console.log('data: ' +data)
   api.updateGame(data)
+  .then($('#gamesDisplay').empty())
+  .then(getAllUserGames)
   .then(ui.gamePatchSuccess)
   .catch(ui.apiFailure)
 }

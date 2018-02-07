@@ -9,6 +9,7 @@ $dovegray: #656565;
 $tuliptree: #F2AB3A;
 $treepoppy: #f7971e;
 $hilight: #ffd200;
+$fuschia: #ff1a91;
 // rgba(101,101,101,.5)
 
 // font  pairings
@@ -24,7 +25,7 @@ $hilight: #ffd200;
   float: right;
   justify-content: center;
   margin: 0px;
-  height: 1000px;
+  height: 985px;
   overflow-y: scroll;
   padding: 20px;
   width: 35%;
@@ -94,7 +95,7 @@ input {
 }
 main {
   float: left;
-  height: 940px;
+  height: 985px;
   margin: 0px;
   // max-height: 1000px;
   overflow-y: scroll;
@@ -155,6 +156,11 @@ main {
 .wrapper {
   margin: 0 auto;
   width: 50%;
+}
+
+#uiFeedbackDisplay {
+  color: $fuschia;
+  text-align: center;
 }
 
 .updateGameModal button {

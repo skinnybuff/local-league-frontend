@@ -24,6 +24,10 @@ const signInSuccess = function (data) {
   // ('#signUpForm').children('input').val('')
 }
 
+const signInFailure = function (data) {
+  $('#uiFeedbackDisplay').text('Please try again')
+}
+
 const signOutSuccess = function (data) {
   // hide the list of  games displayed on sign in
   $('#gamesDisplay').hide()
@@ -37,6 +41,11 @@ const signUpSuccess = function () {
   $('#signUpForm').hide()
 }
 
+const signUpFailure = function () {
+  $('#uiFeedbackDisplay').text('')
+  $('#uiFeedbackDisplay').text('Please try and sign up again')
+}
+
 const changePassSuccess = function () {
   console.log("password changed")
   // TODO: gice modal feed back
@@ -47,7 +56,7 @@ const getAllGamesSuccess = function (data) {
   store.games = data.games
   const gamesListHtml = gameListTemplate({ games: store.games })
   $('#gamesDisplay').append(gamesListHtml)
-  console.log(store.games)
+  // console.log(store.games)
 
 }
 
@@ -62,7 +71,8 @@ const deleteGameSuccess = function () {
 }
 
 const gamePatchSuccess = function () {
-  $('#gamesDisplay').fadeOut(800)
+  $('#gameUpdateForm').hide()
+  $('#gameCreateForm').show()
 }
 
 module.exports = {
@@ -70,5 +80,7 @@ module.exports = {
   signInSuccess,
   signOutSuccess,
   getAllGamesSuccess,
-  changePassSuccess
+  changePassSuccess,
+  signInFailure,
+  signUpFailure
 }
