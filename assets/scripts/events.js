@@ -82,7 +82,6 @@ const onGameDelete = function (event) {
   // console.log(thisGame)
   api.destroyGame(gameId)
     .then(ui.deleteGameSuccess)
-    .then($('#gamesDisplay').empty())
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }

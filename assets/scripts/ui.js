@@ -70,7 +70,7 @@ const deleteGameSuccess = function () {
 }
 
 const gamePatchSuccess = function () {
-  console.log('game alterd')
+  $('#gamesDisplay').empty()
   $('#gameUpdateForm').hide()
   $('#gameCreateForm').show()
 }
