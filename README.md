@@ -11,7 +11,7 @@ the back end api is hosted on [heroku](https://local-league.herokuapp.com/)
 - JS
 
 ### Wire Frames
-
+[  Version 1 Wireframe](https://github.com/skinnybuff/local-league-frontend/blob/master/wireframes/local_league_wireframes.pdf)
 ### User Stories
 As a user i want  CRUD functionality on all games so i can keep me records correct.
 

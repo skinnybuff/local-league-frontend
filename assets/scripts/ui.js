@@ -4,8 +4,11 @@ const store = require('./store')
 const gameListTemplate = require('./templates/games_list.handlebars')
 
 const apiFailure = function (error) {
-  ('#uiFeedbackDisplay').text('')
+  $('#uiFeedbackDisplay').text('')
   $('#uiFeedbackDisplay').text('Please try again')
+  window.setTimeout(() => {
+    $('#uiFeedbackDisplay').text('')
+  }, 1600)
   return error
 }
 
@@ -21,21 +24,22 @@ const signInSuccess = function (data) {
   $('#gameCreateForm').show()
   $('#signOutForm input').val(data.user.email)
   $('#changePassword').show()
-  $('#uiFeedbackDisplay').text('')
+  $('#uiFeedbackDisplay').html('')
+  $('#signInForm :input').val('')
 }
 
 const signInFailure = function (data) {
-  ('#uiFeedbackDisplay').text('')
+  $('#uiFeedbackDisplay').text('')
   $('#uiFeedbackDisplay').text('Please try again')
 }
 
 const signOutSuccess = function (data) {
-  ('#uiFeedbackDisplay').text('')
+  $('#gamesDisplay').fadeOut('slow')
   $('#signOutForm').hide()
   $('#signInForm').show()
   $('#gameCreateForm').hide()
   $('#changePassword').hide()
-  $('form').each((item) => { item.reset() })
+  $('#uiFeedbackDisplay').text('')
 }
 
 const signUpSuccess = function () {
@@ -51,7 +55,11 @@ const signUpFailure = function () {
 
 const changePassSuccess = function () {
   $('#uiFeedbackDisplay').text('')
-  $('#uiFeedbackDisplay').text('Password Changed')
+  $('#uiFeedbackDisplay').text('Password Changed').fadeIn('fast')
+  window.setTimeout(() => {
+    $('#uiFeedbackDisplay').text('')
+  }, 1600)
+  $('#changePassword :input').val('')
 }
 
 const getAllGamesSuccess = function (data) {
@@ -64,17 +72,18 @@ const getAllGamesSuccess = function (data) {
 const createGameSuccess = function (data) {
   // console.log(" new game data: " + data)
   $('#gamesDisplay').empty()
-  $('#gameCreateForm').children('input').val('')
+  $('#gameCreateForm :input').val('')
 }
 
 const deleteGameSuccess = function () {
-  $('#gamesDisplay').fadeOut(800)
+  $('#gamesDisplay').empty()
 }
 
 const gamePatchSuccess = function () {
   $('#gamesDisplay').empty()
   $('#gameUpdateForm').hide()
   $('#gameCreateForm').show()
+  $('#gameUpdateForm :input').val('')
 }
 
 module.exports = {
