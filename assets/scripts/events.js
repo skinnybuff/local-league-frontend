@@ -60,22 +60,20 @@ const onCreateGame = function (event) {
 }
 // pre fill the game patch function with the selcted games data
 const stagingGameChange = function () {
-  const clickedGameId = $(this).parents('.card').attr('data-game-id')
-
-  api.getOneGame(clickedGameId)
-  .then(console.log(Response))
-  .catch(ui.apiFailure)
+  // const clickedGameId = $(this).parents('.card').attr('data-game-id')
+  //
+  // api.getOneGame(clickedGameId)
+  // .then(console.log(Response))
+  // .catch(ui.apiFailure)
 }
 
 const onGameChange = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // console.log('gameId: ' +gameId)
-  // console.log('data: ' +data)
   api.updateGame(data)
+  .then(ui.gamePatchSuccess)
   .then($('#gamesDisplay').empty())
   .then(getAllUserGames)
-  .then(ui.gamePatchSuccess)
   .catch(ui.apiFailure)
 }
 

@@ -29,9 +29,10 @@
             <input type="password" name="credentials[password]" placeholder="password"/>
             <button type="submit">Sign In</button>
           </form>
-          <div id="uiFeedbackDisplay">test copy </div>
           <!-- this link is to allow the user to sign up if they havenet used the app before -->
           <a id="signUpToggleBtn"> Sign Up</a>
+          <!--  HUD for ui feedback -->
+          <div id="uiFeedbackDisplay"></div>
 
           <form id="signUpForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
@@ -55,7 +56,7 @@
           <!-- through this form a user updates a game -->
           <form id="gameUpdateForm">
             <hr/>
-            <h4>Change a game game</h4>
+            <h4>Edit game info</h4>
             <br>
             <input type="number"  name="game[id]" placeholder="game id"/>
             <input type="date"  name="game[date]">

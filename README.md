@@ -3,6 +3,8 @@
 This application is designed to track team standings and player stats
 for community sports leagues
 
+the back end api is hosted on [heroku](https://local-league.herokuapp.com/)
+
 ### Technologies Used
 - HTML
 - SCSS

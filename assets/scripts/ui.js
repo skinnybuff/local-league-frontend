@@ -1,17 +1,17 @@
 'use strict'
+
 const store = require('./store')
 const event = require('./events')
 const gameListTemplate = require('./templates/games_list.handlebars')
 
 const apiFailure = function (error) {
-   console.log(error)
-  // TODO: Give user feed back to a faild request
+  $('#uiFeedbackDisplay').text('Please try again')
 }
 
 const signInSuccess = function (data) {
   // the sign in return data is saved in the app store
   store.user = data.user
-  // show the list of  games displayed on sign in
+  // show the list of  games displayed on sign in\
   $('#gamesDisplay').fadeIn('slow')
   $('#signOutForm').show()
   $('#signUpForm').fadeOut('fast')
@@ -35,6 +35,8 @@ const signOutSuccess = function (data) {
   $('#signInForm').show()
   $('#gameCreateForm').hide()
   $('#changePassword').hide()
+  $('form').each( () => { this.reset })
+
 }
 
 const signUpSuccess = function () {
@@ -47,9 +49,7 @@ const signUpFailure = function () {
 }
 
 const changePassSuccess = function () {
-  console.log("password changed")
-  // TODO: gice modal feed back
-
+  $('#uiFeedbackDisplay').text('Password Changed')
 }
 
 const getAllGamesSuccess = function (data) {
@@ -62,7 +62,6 @@ const getAllGamesSuccess = function (data) {
 
 const createGameSuccess = function (data) {
   // console.log(" new game data: " + data)
-
   $('#gameCreateForm').children('input').val('')
 }
 
@@ -71,6 +70,7 @@ const deleteGameSuccess = function () {
 }
 
 const gamePatchSuccess = function () {
+  console.log('game alterd')
   $('#gameUpdateForm').hide()
   $('#gameCreateForm').show()
 }
