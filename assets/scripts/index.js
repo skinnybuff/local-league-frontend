@@ -45,9 +45,11 @@ $(() => {
   $('main').on('click', '.gameDeleteBtn', event.onGameDelete)
   // click event to launch game patch modal
   $('main').on('click', '.gameEditBtn', function () {
+    $('#gameCreateForm').hide()
     $('#gameUpdateForm').show()
   })
-  $('gameUpdateForm').on('sumbit', event.onGameChange)
+  $('#gameUpdateForm').on('submit', event.onGameChange)
+
   // event for sumbit inside of the patch modal
   // $('main').on('submit', '#updateGameForm', event.onGameChange)
 })

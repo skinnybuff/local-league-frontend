@@ -4,15 +4,13 @@
 const getFormFields = require(`../../lib/get-form-fields`)
 const api = require('./api')
 const ui = require('./ui')
-const event = require('./events')
-const store = require('./store')
 
 const onSignUpRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.signUp(data)
-  .then(ui.signUpSuccess)
-  .catch(ui.apiFailure)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFailure)
 }
 
 // after signin siccess all games are retrieved
@@ -20,26 +18,25 @@ const onSignInRequest = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.signIn(data)
-   .then(ui.signInSuccess)
-   .then(getAllUserGames)
-   .catch(ui.apiFailure)
+    .then(ui.signInSuccess)
+    .then(getAllUserGames)
+    .catch(ui.signInFailure)
 }
 
 const onSignOutRequest = function (event) {
   event.preventDefault()
   api.signOut()
-   .then(ui.signOutSuccess)
-   .catch(ui.apiFailure)
+    .then(ui.signOutSuccess)
+    .catch(ui.apiFailure)
 }
 
 const onChangePass = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
   api.changePassword(data)
-  .then(ui.changePassSuccess)
-  .catch(ui.apiFailure)
+    .then(ui.changePassSuccess)
+    .catch(ui.apiFailure)
 }
-
 
 const getAllUserGames = function () {
   api.getGames()
@@ -54,28 +51,25 @@ const onCreateGame = function (event) {
   // debugger
   api.createGame(data)
     .then(ui.createGameSuccess)
-    .then($('#gamesDisplay').empty())
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }
 // pre fill the game patch function with the selcted games data
 const stagingGameChange = function () {
-  const clickedGameId = $(this).parents('.card').attr('data-game-id')
-
-  api.getOneGame(clickedGameId)
-  .then(console.log(Response))
-  .catch(ui.apiFailure)
+  // const clickedGameId = $(this).parents('.card').attr('data-game-id')
+  //
+  // api.getOneGame(clickedGameId)
+  // .then(console.log(Response))
+  // .catch(ui.apiFailure)
 }
 
-const onGameChange = function () {
+const onGameChange = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  // console.log('gameId: ' +gameId)
-  // console.log('data: ' +data)
   api.updateGame(data)
-  .then(ui.gamePatchSuccess)
-  .then(getAllUserGames)
-  .catch(ui.apiFailure)
+    .then(ui.gamePatchSuccess)
+    .then(getAllUserGames)
+    .catch(ui.apiFailure)
 }
 
 const onGameDelete = function (event) {
@@ -83,11 +77,9 @@ const onGameDelete = function (event) {
   // console.log(thisGame)
   api.destroyGame(gameId)
     .then(ui.deleteGameSuccess)
-    .then($('#gamesDisplay').empty())
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }
-
 
 module.exports = {
   onSignUpRequest,
