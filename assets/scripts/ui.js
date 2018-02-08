@@ -5,6 +5,7 @@ const event = require('./events')
 const gameListTemplate = require('./templates/games_list.handlebars')
 
 const apiFailure = function (error) {
+  ('#uiFeedbackDisplay').text('')
   $('#uiFeedbackDisplay').text('Please try again')
 }
 
@@ -20,17 +21,17 @@ const signInSuccess = function (data) {
   $('#gameCreateForm').show()
   $('#signOutForm input').val(data.user.email)
   $('#changePassword').show()
-  // console.log(store)
-  // ('#signUpForm').children('input').val('')
+
+  ('#uiFeedbackDisplay').text('')
 }
 
 const signInFailure = function (data) {
+  ('#uiFeedbackDisplay').text('')
   $('#uiFeedbackDisplay').text('Please try again')
 }
 
 const signOutSuccess = function (data) {
-  // hide the list of  games displayed on sign in
-  $('#gamesDisplay').hide()
+  ('#uiFeedbackDisplay').text('')
   $('#signOutForm').hide()
   $('#signInForm').show()
   $('#gameCreateForm').hide()
@@ -40,6 +41,8 @@ const signOutSuccess = function (data) {
 }
 
 const signUpSuccess = function () {
+  ('#uiFeedbackDisplay').text('')
+  ('#uiFeedbackDisplay').text('You have Signed Up')
   $('#signUpForm').hide()
 }
 
@@ -49,10 +52,12 @@ const signUpFailure = function () {
 }
 
 const changePassSuccess = function () {
+  $('#uiFeedbackDisplay').text('')
   $('#uiFeedbackDisplay').text('Password Changed')
 }
 
 const getAllGamesSuccess = function (data) {
+
   store.games = data.games
   const gamesListHtml = gameListTemplate({ games: store.games })
   $('#gamesDisplay').append(gamesListHtml)
@@ -62,6 +67,7 @@ const getAllGamesSuccess = function (data) {
 
 const createGameSuccess = function (data) {
   // console.log(" new game data: " + data)
+  $('#gamesDisplay').empty()
   $('#gameCreateForm').children('input').val('')
 }
 

@@ -54,7 +54,6 @@ const onCreateGame = function (event) {
   // debugger
   api.createGame(data)
     .then(ui.createGameSuccess)
-    .then($('#gamesDisplay').empty())
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }
@@ -72,7 +71,6 @@ const onGameChange = function (event) {
   const data = getFormFields(this)
   api.updateGame(data)
   .then(ui.gamePatchSuccess)
-  .then($('#gamesDisplay').empty())
   .then(getAllUserGames)
   .catch(ui.apiFailure)
 }
