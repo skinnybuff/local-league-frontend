@@ -82,5 +82,6 @@ module.exports = {
   getAllGamesSuccess,
   changePassSuccess,
   signInFailure,
-  signUpFailure
+  signUpFailure,
+  gamePatchSuccess
 }
