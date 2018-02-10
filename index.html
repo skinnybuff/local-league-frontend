@@ -23,6 +23,7 @@
             <h1>Local League</h1>
             <p id="headsUp"> </p>
           </header>
+
           <form id="signInForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
             <br>
@@ -33,7 +34,6 @@
           <!-- this link is to allow the user to sign up if they havenet used the app before -->
           <a id="signUpToggleBtn"> Sign Up</a>
           <!--  HUD for ui feedback -->
-          <div id="uiFeedbackDisplay"></div>
 
           <form id="signUpForm">
             <input type="text" name="credentials[email]" placeholder="email"/>
@@ -47,6 +47,7 @@
           <form id="signOutForm">
             <input readonly="true" class="no-select"></input>
             <button>Sign Out</button>
+            <a id="settingsToggleBtn"> Settings</a>
           </form>
 
           <form id="changePassword">
@@ -58,8 +59,9 @@
           <form id="gameUpdateForm">
             <hr/>
             <h4>Edit game info</h4>
+            <a id="updateCloseBtn">Close</a>
             <br>
-            <input type="number"  name="game[id]" placeholder="game id"/>
+            <input type="number"  name="game[id]" placeholder="game id"/ required>
             <input type="date"  name="game[date]">
             <input type="text" name="game[location]" placeholder="location"/>
             <input type="text" name="game[home_team]" placeholder="home team"/>
@@ -81,35 +83,8 @@
             <input type="number" name="game[away_score]" placeholder="away team score"/>
             <button type="submit">Create</button>
           </form>
-
         </div>
       </aside>
 
     </body>
 </html>
-
-<!--
-<div class="modal fade" id="updateGameModal">
-  <div class="modal-dialog modal-sm">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title text-center">Update your game</h2>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="THIS_ID_IS_NOT_USED">
-          <input type="date" name="game[date]" />
-          <input type="text" name="game[location]" placeholder="location"/>
-          <input type="text" name="game[home_team]" placeholder="home team"/>
-          <input type="number" name="game[home_score]" placeholder="home team score"/>
-          <input type="text" name="game[away_team]" placeholder="away team"/>
-          <input type="number" name="game[away_score]" placeholder="away team score"/>
-          <button type="sumbit">Save Changes</button>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> -->
