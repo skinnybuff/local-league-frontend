@@ -160,15 +160,39 @@ main {
 
 #uiFeedbackDisplay {
     color: $neonpink;
-    font-family: 'Teko', sans-serif;
-    font-size: 1.2em;
+    // font-family: 'Teko', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1em;
+    letter-spacing: .8px;
     text-align: center;
 }
-
+#updateCloseBtn {
+  float: right;
+}
 .updateGameModal button {
   background: $meteorite;
 
   &:hover {
     color: #fff;
   }
+}
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: lighten($dovegray, 20%);
+    width: 12px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: lighten($meteorite, 20%);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $meteorite;
 }
