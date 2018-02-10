@@ -39,6 +39,8 @@ const signInFailure = function (data) {
   $('#uiFeedbackDisplay').text('')
   // User feed back for a sign in error
   $('#uiFeedbackDisplay').text('Please sign up or check your email and password')
+  // clear the sign in form values
+  $('#signInForm input').val('')
 }
 
 const signOutSuccess = function (data) {
