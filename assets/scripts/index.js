@@ -37,19 +37,22 @@ $(() => {
   $('#gameUpdateForm').hide()
   // create game btn connects to api function
   $('#gameCreateForm').on('submit', event.onCreateGame)
-  //hide pass change before log in
+  // hide pass change before log in
   $('#changePassword').hide()
   // click event to change user password
   $('#changePassword').on('submit', event.onChangePass)
   // click event to delete a game
   $('main').on('click', '.gameDeleteBtn', event.onGameDelete)
   // click event to launch game patch modal
-  $('main').on('click', '.gameEditBtn', function () {
-    $('#gameCreateForm').hide()
-    $('#gameUpdateForm').show()
-  })
+  // TODO: move the hide and show function to ui js
+  $('main').on('click', '.gameEditBtn', event.showGameEdit)
+  // btn to submit game info changes
   $('#gameUpdateForm').on('submit', event.onGameChange)
+  // hide th close edit btn before editing
+  $('#updateCloseBtn').hide()
+  // btn to close the update game form if you no longer what to edit a game
+  $('#updateCloseBtn').on('click', event.hideUpdateGame)
 
-  // event for sumbit inside of the patch modal
-  // $('main').on('submit', '#updateGameForm', event.onGameChange)
+  // toggle show and hide the change password forum
+  $('aside').on('click', '#settingsToggleBtn', event.toggleChangePassword)
 })
