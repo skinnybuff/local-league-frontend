@@ -29,7 +29,7 @@ const onSignOutRequest = function (event) {
     .then(ui.signOutSuccess)
     .catch(ui.apiFailure)
 }
-
+// this event is triggered by setting a new password
 const onChangePass = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -62,7 +62,7 @@ const stagingGameChange = function () {
   // .then(console.log(Response))
   // .catch(ui.apiFailure)
 }
-
+// thie event runs when the update date game submit it triggered
 const onGameChange = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
@@ -71,7 +71,7 @@ const onGameChange = function (event) {
     .then(getAllUserGames)
     .catch(ui.apiFailure)
 }
-
+// this event is launched when a single game is selcted foe delete
 const onGameDelete = function (event) {
   const gameId = $(this).parents('.card').attr('data-game-id')
   // console.log(thisGame)
@@ -79,6 +79,19 @@ const onGameDelete = function (event) {
     .then(ui.deleteGameSuccess)
     .then(getAllUserGames)
     .catch(ui.apiFailure)
+}
+// this event will close the update game form and show the add game option
+const hideUpdateGame = () => {
+  // console.log('event update game')
+  ui.closeUpdateGame()
+}
+//
+const showGameEdit = function () {
+  ui.showGameEditForm()
+}
+// this event will toggle the  show and hide for the change password form
+const toggleChangePassword = () => {
+  ui.toggleChangePassword()
 }
 
 module.exports = {
@@ -90,5 +103,8 @@ module.exports = {
   onChangePass,
   onGameChange,
   onGameDelete,
-  stagingGameChange
+  stagingGameChange,
+  hideUpdateGame,
+  toggleChangePassword,
+  showGameEdit
 }
