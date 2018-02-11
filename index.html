@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Local League</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <main id="gamesDisplay">
+
+
+      </main>
+
+      <aside id="adminPanel">
+        <div class="wrapper">
+          <header>
+            <h1>Local League</h1>
+            <p id="headsUp"> </p>
+          </header>
+
+          <form id="signInForm">
+            <input type="text" name="credentials[email]" placeholder="email"/>
+            <br>
+            <input type="password" name="credentials[password]" placeholder="password"/>
+            <button type="submit">Sign In</button>
+          </form>
+          <div id="uiFeedbackDisplay"> </div>
+          <!-- this link is to allow the user to sign up if they havenet used the app before -->
+          <a id="signUpToggleBtn"> Sign Up</a>
+          <!--  HUD for ui feedback -->
+
+          <form id="signUpForm">
+            <input type="text" name="credentials[email]" placeholder="email"/>
+            <br>
+            <input type="password" name="credentials[password]" placeholder="password"/>
+            <br>
+            <input type="password" name="credentials[password_confirmation]" placeholder="retype password"/>
+            <button type="submit">Sign Up</button>
+          </form>
+
+          <form id="signOutForm">
+            <input readonly="true" class="no-select"></input>
+            <button>Sign Out</button>
+            <a id="settingsToggleBtn"> Settings</a>
+          </form>
+
+          <form id="changePassword">
+            <input type="password" name="passwords[old]" placeholder="old password"/>
+            <input type="password" name="passwords[new]" placeholder="new password"/>
+            <button> Change Password</button>
+          </form>
+          <!-- through this form a user updates a game -->
+          <form id="gameUpdateForm">
+            <hr/>
+            <h4>Edit game info</h4>
+            <a id="updateCloseBtn">Close</a>
+            <br>
+            <input type="number"  name="game[id]" placeholder="game id"/ required>
+            <input type="date"  name="game[date]">
+            <input type="text" name="game[location]" placeholder="location"/>
+            <input type="text" name="game[home_team]" placeholder="home team"/>
+            <input type="number" name="game[home_score]" placeholder="home team score"/>
+            <input type="text" name="game[away_team]" placeholder="away team"/>
+            <input type="number" name="game[away_score]" placeholder="away team score"/>
+            <button type="submit">Update</button>
+          </form>
+          <!-- through this form a user create games -->
+          <form id="gameCreateForm">
+            <hr/>
+            <label> <h4>Add a new game<h4> </label>
+            <br>
+            <input type="date" name="game[date]" />
+            <input type="text" name="game[location]" placeholder="location"/>
+            <input type="text" name="game[home_team]" placeholder="home team"/>
+            <input type="number" name="game[home_score]" placeholder="home team score"/>
+            <input type="text" name="game[away_team]" placeholder="away team"/>
+            <input type="number" name="game[away_score]" placeholder="away team score"/>
+            <button type="submit">Create</button>
+          </form>
+        </div>
+      </aside>
+
+    </body>
+</html>
