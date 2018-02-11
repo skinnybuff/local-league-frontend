@@ -49,6 +49,8 @@ const signOutSuccess = function (data) {
   store.games = {}
   // clear the games resource dispaly
   $('#gamesDisplay').fadeOut('slow')
+  // empty the games resource dispaly
+  $('#gamesDisplay').empty()
   // clear the HUD
   $('#uiFeedbackDisplay').text('')
   // empty create game form
@@ -57,6 +59,8 @@ const signOutSuccess = function (data) {
   $('#gameUpdateForm :input').val('')
   // Show the option to log back in
   $('#signInForm').show()
+  // show sign up btn after sign out
+  $('#signUpToggleBtn').show()
   // hide all other forms
   $('#signOutForm').hide()
   $('#gameCreateForm').hide()
