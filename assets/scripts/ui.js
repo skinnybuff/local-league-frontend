@@ -51,6 +51,10 @@ const signOutSuccess = function (data) {
   $('#gamesDisplay').fadeOut('slow')
   // clear the HUD
   $('#uiFeedbackDisplay').text('')
+  // empty create game form
+  $('#gameCreateForm :input').val('')
+  // clear update game form
+  $('#gameUpdateForm :input').val('')
   // Show the option to log back in
   $('#signInForm').show()
   // hide all other forms
@@ -88,6 +92,15 @@ const changePassSuccess = function () {
   }, 1600)
 }
 
+const changePassFailure = function () {
+  // empty form fields
+  $('#changePassword :input').val('')
+  // clear hud
+  $('#uiFeedbackDisplay').text('')
+  // feed back for bad sign up
+  $('#uiFeedbackDisplay').text('Check your password and try again')
+}
+
 const getAllGamesSuccess = function (data) {
   store.games = data.games
   const gamesListHtml = gameListTemplate({ games: store.games })
@@ -98,6 +111,7 @@ const getAllGamesSuccess = function (data) {
 const createGameSuccess = function (data) {
   // console.log(" new game data: " + data)
   $('#gamesDisplay').empty()
+  // empty create game form
   $('#gameCreateForm :input').val('')
 }
 
@@ -122,6 +136,9 @@ const closeUpdateGame = () => {
 }
 
 const toggleChangePassword = () => {
+  // clear hud
+  $('#uiFeedbackDisplay').text('')
+  // show or hide change password form
   $('#changePassword').toggle()
 }
 
@@ -144,5 +161,6 @@ module.exports = {
   signUpSuccess,
   closeUpdateGame,
   toggleChangePassword,
-  showGameEditForm
+  showGameEditForm,
+  changePassFailure
 }
