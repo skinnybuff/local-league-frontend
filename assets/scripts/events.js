@@ -35,7 +35,7 @@ const onChangePass = function (event) {
   const data = getFormFields(this)
   api.changePassword(data)
     .then(ui.changePassSuccess)
-    .catch(ui.apiFailure)
+    .catch(ui.changePassFailure)
 }
 
 const getAllUserGames = function () {
