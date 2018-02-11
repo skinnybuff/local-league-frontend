@@ -2,7 +2,7 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://local-league.herokuapp.com/',
+    production: 'https://local-league.herokuapp.com',
     development: 'http://localhost:4741'
   }
 }
