@@ -3,6 +3,7 @@
 This application is designed to track team standings and player stats
 for community sports leagues
 
+the frontend is host on [github pages](https://skinnybuff.github.io/local-league-frontend/)
 the back end api is hosted on [heroku](https://local-league.herokuapp.com/)
 
 ### Technologies Used
@@ -31,4 +32,4 @@ Forms were created for the desired functions and the CRUD operations
 Events for the submit actions were created and linked to the API calls
 
 ### Version 2
-In v2 the user will be able to
+In v2 the user will be able to sign up as part of a team and see team info
